@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #111 0%, #000 65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* TOP QUOTE */
+.top-quote {
+  position: absolute;
+  top: 18px;
+  text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: 0.8px;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.top-quote strong {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.top-quote span {
+  font-weight: 300;
+  opacity: 0.75;
+}
+
+/* Layout */
+.wrapper {
+  display: flex;
+  gap: 50px;
+  max-width: 900px;
+  width: 100%;
+  z-index: 2;
+}
+
+.clock-box {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0,0,0,0.7);
+}
+
+.clock {
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.date {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #fff;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+#stop {
+  background: #ff3b3b;
+  color: #fff;
+}
+
+.quote-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+#quote {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-weight: 300;
+  opacity: 0.95;
+  border-left: 3px solid #ff3b3b;
+  padding-left: 20px;
+  white-space: pre-line; /* IMPORTANT: spacing fix */
+}
+
+/* ECG */
+.ecg {
+  position: absolute;
+  bottom: 40px;
+  width: 320px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.ecg span {
+  position: absolute;
+  width: 640px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 10%,
+    red 20%,
+    transparent 30%,
+    red 40%,
+    transparent 50%
+  );
+  animation: pulse 1.1s infinite linear;
+}
+
+@keyframes pulse {
+  from { left: -640px; }
+  to { left: 320px; }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .clock {
+    font-size: 2.6rem;
+  }
+
+  #quote {
+    font-size: 1.1rem;
+  }
+}
